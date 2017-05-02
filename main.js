@@ -7,7 +7,7 @@ const url = require('url')
 
 let janela;
 
-function createWindow () {
+function criaJanela() {
     janela = new BrowserWindow({
         title: "Gerencia UFRRJ",
         titleBarStyle: 'hidden',
@@ -38,7 +38,7 @@ function createWindow () {
     });
 }
 
-app.on('ready', createWindow);
+app.on('ready', criaJanela);
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
@@ -48,6 +48,6 @@ app.on('window-all-closed', function () {
 
 app.on('activate', function () {
     if (janela === null) {
-        createWindow();
+        criaJanela();
     }
 })

@@ -1,33 +1,6 @@
 var marcadores = [];
 var colunas = [];
 var colLat,colLon = null;
-var csvComLabel = true;
-
-$("#arqTabela").change(function(e){
-    var arq = e.target.files[0];
-    var leitor = new FileReader();
-    leitor.onload = function(r) {
-        tabela = $.csv.toArrays(r.target.result);
-        if(csvComLabel){       
-            colunas = [];
-            for(var c=0;c<tabela[0].length;c++){
-                colunas.push(tabela[0][c]);
-                $("#colunas").append("<label>" + tabela[0][c] + "</label>");
-            }  
-            tabela = tabela.splice(1,tabela.length);
-        }
-        //// SÓ PRA TESTE
-        colLat = 0; colLon = 1;
-        ////
-        for(i=0;i<tabela.length;i++){
-            posicoes.push(new google.maps.LatLng(tabela[i][colLat], tabela[i][colLon]));
-        }
-        adicionaMarcadores();
-        geraMapaCalor();
-        criaTabela();   
-    };
-    leitor.readAsText(arq); 
-});
 
 function criaTabela(){
     $("#containerTabela").html("");

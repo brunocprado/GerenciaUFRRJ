@@ -7,6 +7,7 @@ label,span,li,img,h2,h3,input{
 
 #login{
 /*    display: none;*/
+    background-color: white;
     position:absolute;
     top:0; left: 0;
     right: 0; bottom: 0;
@@ -32,7 +33,7 @@ label,span,li,img,h2,h3,input{
     margin-left: -200px;
     margin-top: -140px;
     background: rgba(255,255,255,.6);
-    box-shadow: 0px 0px 5px rgba(0,0,0,.6);
+    box-shadow: 0px 0px 8px rgba(0,0,0,.6);
     border-radius: 5px;
     -webkit-app-region: no-drag;
     padding: 20px;
@@ -277,7 +278,7 @@ label input[type="checkbox"]:checked + .lever::after {
     box-sizing: border-box;
     padding: 0px 2%;
     border-bottom: solid 1px #bbb;
-    box-shadow: 0 0 4px #555;
+    box-shadow: 0 0 2px #777;
     -webkit-app-region:drag;
     z-index: 9999;
 }
