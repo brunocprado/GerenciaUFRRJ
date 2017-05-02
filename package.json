@@ -1,0 +1,27 @@
+{
+  "name": "trabSI",
+  "version": "1.0.0",
+  "description": "Aplicacao para apoio de tomada de decisao",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "repository": "",
+  "author": "Bruno Prado",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.5"
+  },
+  "dependencies": {
+      "jquery": "^3.2.1",
+      "mysql" : "git+https://github.com/mysqljs/mysql.git"
+  },
+  "build": {
+      "appId": "trabSI",
+      "mac": {
+         "category": "Gerencia"
+      }
+  }
+}
