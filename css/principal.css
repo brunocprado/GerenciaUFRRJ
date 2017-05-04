@@ -362,6 +362,10 @@ label input[type="checkbox"]:checked + .lever::after {
     width: 100%;
     height: 320px;
 }
+#btnTelaCheia{
+    float: right !important;
+    cursor: pointer;
+}
 #mapaInicio.aberto{
     position: absolute !important;
     top: 0px;

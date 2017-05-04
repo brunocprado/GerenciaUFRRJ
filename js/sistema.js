@@ -17,11 +17,7 @@ var posicoes = [];
 var mapaCalor;
 
 $("#frmLogin").submit(function(e){
-    console.log("aaa");
-   if($("#txtUsuario").val() == "bruno"){
-//       alert("foi");
-       $("#login").fadeOut(500);
-   } 
+    fazLogin($("#txtUsuario").val(),$("#txtSenha").val());
     e.preventDefault();
     return false;
 });
@@ -119,6 +115,9 @@ $("#mMapa").click(function(e){
     $("#inicio").css("left","0px");
     $("#mapaInicio").addClass("aberto");
     google.maps.event.trigger(mapa, "resize");
+});
+$("#btnTelaCheia").click(function(e){
+    $("#mMapa").trigger("click");
 });
 
 $("#menuInicio").click(function(e){

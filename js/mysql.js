@@ -9,15 +9,6 @@ var conexao = mysql.createConnection({
 
 conexao.connect();
 
-//var post  = {id:5,nome: "Bruno" };
-
-//conexao.query('SELECT * from teste', function(err, rows, fields) {
-//  if (!err)
-//    console.log('The solution is: ', rows);
-//  else
-//    console.log('Error while performing Query.');
-//});
-
 function getPosicoes(){
     conexao.query('SELECT * from teste', function(err, rows, fields) {
         if (!err){
@@ -38,6 +29,20 @@ function getDadosInicio(){
     conexao.query('SELECT COUNT(*) AS "QT" from salas', function(err, rows, fields) {
         if (!err){
             $("#qtSalas").html(rows['0'].QT);
+        }
+    });
+}
+
+function fazLogin(login,senha){
+    var post = {login: login,senha:senha};
+    conexao.query('SELECT COUNT(*) AS "QT" from usuarios WHERE login="' + login + '" AND senha="' + senha + '"', function(err, rows, fields) {
+        if (!err){
+            if(rows['0'].QT == 1){
+                console.log("LOGADO");
+                $("#login").fadeOut(500);
+            } else{
+                alert("Usúario ou senha incorretos");
+            }
         }
     });
 }
