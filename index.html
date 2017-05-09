@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/principal.css">
     <link rel="stylesheet" type="text/css" href="css/datatables.css">
+    <link rel="stylesheet" type="text/css" href="lib/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="css/material.css">
 </head>
 <body>
@@ -76,7 +77,7 @@
         <div id="inicio" ativo="true">            
             <div id="containerInicio">
                 <div class="boxInicio" style="margin-left:0px !important;">
-                    <img src="img/pessoa.png">
+                    <img src="img/aluno.png">
                     <label id="qtAlunos">0</label>
                     <span>Alunos</span>
                 </div>
@@ -86,12 +87,14 @@
                     <span>Salas</span>
                 </div>
                 <div class="boxInicio">
+                    <img src="img/livro.png">
                     <label>0</label>
-                    <span></span>
+                    <span>Matérias</span>
                 </div>
                 <div class="boxInicio">
-                    <label>0</label>
-                    <span></span>
+                    <img src="img/avatar.png">
+                    <label id="qtUsuarios">0</label>
+                    <span>Usuários</span>
                 </div>
             </div>
             
@@ -110,6 +113,14 @@
                     <label>Gráfico</label>
                 </div>        
                 <div><canvas id="grafico" ></canvas></div>
+            </div>
+            
+            <div class="box" style="width:98%; margin-bottom: 30px;">
+                <div class="tituloBox">
+                    <img src="img/plot.png" height="18px">
+                    <label>Calendário</label>
+                </div>        
+                <div id="calendario"></div>
             </div>
             
         </div>
@@ -142,6 +153,8 @@
 	<script src="lib/jquery.csv.min.js"></script>
 	<script src="lib/cluster.js"></script>
     <script src="lib/datatables.js"></script>
+    <script src="lib/moment.min.js"></script>
+    <script src="lib/fullcalendar.min.js"></script>
     
     <script src="js/mysql.js"></script>
 

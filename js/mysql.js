@@ -31,6 +31,11 @@ function getDadosInicio(){
             $("#qtSalas").html(rows['0'].QT);
         }
     });
+    conexao.query('SELECT COUNT(*) AS "QT" from usuarios', function(err, rows, fields) {
+        if (!err){
+            $("#qtUsuarios").html(rows['0'].QT);
+        }
+    });
 }
 
 function fazLogin(login,senha){

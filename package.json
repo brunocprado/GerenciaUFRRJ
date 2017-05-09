@@ -1,6 +1,6 @@
 {
-  "name": "trabSI",
-  "version": "1.0.0",
+  "name": "GerenciaUFRRJ",
+  "version": "0.2.0",
   "description": "Aplicacao para apoio de tomada de decisao",
   "main": "main.js",
   "scripts": {
@@ -19,7 +19,7 @@
       "mysql" : "git+https://github.com/mysqljs/mysql.git"
   },
   "build": {
-      "appId": "trabSI",
+      "appId": "GerenciaUFRRJ",
       "mac": {
          "category": "Gerencia"
       }

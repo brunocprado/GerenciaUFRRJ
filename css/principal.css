@@ -260,7 +260,7 @@ label input[type="checkbox"]:checked + .lever::after {
     box-sizing: border-box;
     position: absolute;
     top:0px; bottom:0; left: 2%; right: 0;
-    
+    overflow: auto;0,0
 }
 
 #containerInicio{
@@ -376,6 +376,8 @@ label input[type="checkbox"]:checked + .lever::after {
 }
 
 #grafico{ padding: 0px 5px; height: 320px; width: content-box;}
+
+#calendario{ height: 400px;}
 
 /*Tabela*/
 #container table{
