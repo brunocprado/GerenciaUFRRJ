@@ -3,11 +3,15 @@ const remote = require('electron').remote;
 var chart = require('chart.js');
 
 //=====| Runtime |=====//
-var mapa = new google.maps.Map(document.getElementById('mapaInicio'),{
-    zoom: 16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    center: new google.maps.LatLng(-22.7653619,-43.688468)
-});
+//var mapa = new google.maps.Map(document.getElementById('mapaInicio'),{
+//    zoom: 16,
+//    mapTypeId: google.maps.MapTypeId.ROADMAP,
+//    center: new google.maps.LatLng(-22.7653619,-43.688468)
+//});
+
+var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"));
+
+autocomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
 
 var data;
 
@@ -19,6 +23,10 @@ $("#frmLogin").submit(function(e){
     fazLogin($("#txtUsuario").val(),$("#txtSenha").val());
     e.preventDefault();
     return false;
+});
+
+$("#txtPesquisar").change(function(e){
+   pesquisa($(this).val()); 
 });
 
 $('#calendario').fullCalendar({
