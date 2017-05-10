@@ -1,0 +1,45 @@
+var txt = "";
+for(var i = 0;i<1000;i++){
+    var lat = -22.769 - Math.random()/50;
+    var lng = -43.71 - Math.random()/50;
+    txt += '"' + lat + '","' + lng + '"\n';
+}
+
+console.log(txt);
+copy(txt);
+
+
+
+var txt = "";
+var tmp = [[-22.76487,-43.6894178],[-22.7662461,-43.6829366],[-22.7711541,-43.6843469],[-22.7711541,-43.6843469],[-22.7735234,-43.6870693],[-22.7618077,-43.6904592]];
+
+txt += '"Lat","Lon\n"';
+for(var i = 0;i<1000;i++){
+    var a = Math.floor(Math.random() * tmp.length );
+    txt += '"' + tmp[a][0] + '","' + tmp[a][1] + '"\n';
+}
+
+console.log(txt);
+copy(txt);
+
+
+var tmp = ["P1","PAT","IB","PIT","ICHS"];
+
+for(var i=1;i<101;i++){
+    var post  = {
+        id: i,
+        predio: Math.floor(Math.random() * tmp.length),
+        sala : Math.floor(Math.random() * 30) + 20 + "",
+        capacidade: Math.floor(Math.random() * 30) + 20,
+        projetor: false,
+        computador: false
+    };
+
+    conexao.query('INSERT INTO salas SET ?',post, function(err, rows, fields) {
+        if (!err)
+    console.log('The solution is: ', rows);
+  else
+    console.log('Error while performing Query.');
+    });
+}
+

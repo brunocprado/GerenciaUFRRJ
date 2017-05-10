@@ -3,12 +3,11 @@ const remote = require('electron').remote;
 var chart = require('chart.js');
 
 //=====| Runtime |=====//
-var opcoesMapa = {
-  zoom: 16,
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-  center: new google.maps.LatLng(-22.7653619,-43.688468)
-};
-var mapa = new google.maps.Map(document.getElementById('mapaInicio'), opcoesMapa);
+var mapa = new google.maps.Map(document.getElementById('mapaInicio'),{
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    center: new google.maps.LatLng(-22.7653619,-43.688468)
+});
 
 var data;
 
@@ -20,6 +19,19 @@ $("#frmLogin").submit(function(e){
     fazLogin($("#txtUsuario").val(),$("#txtSenha").val());
     e.preventDefault();
     return false;
+});
+
+$('#calendario').fullCalendar({
+    weekends: false, // Hide weekends
+//    defaultView: 'agendaWeek', // Only show week view
+//    header: false, // Hide buttons/titles
+    minTime: '07:30:00', // Start time for the calendar
+    maxTime: '22:00:00', // End time for the calendar
+//    columnFormat: {
+//        week: 'ddd' // Only show day of the week names
+//    },
+    displayEventTime: true,
+    contentHeight: 340 
 });
 
 
@@ -131,6 +143,7 @@ $("#btnFechar").click(function(e){
     remote.getCurrentWindow().close(); 
 });
 
+
 //=====| Menu Mapa |=====//
 $("#checkMarcadores").change(function(e){ 
     if($(this).is(":checked")){
@@ -150,5 +163,3 @@ $("#checkDensidade").change(function(e){
     if(mapaCalor != null) { mapaCalor.setMap(mapaCalor.getMap() ? null : mapa); }
 });
 //======================//
-
-

@@ -13,8 +13,8 @@ function criaJanela() {
         titleBarStyle: 'hidden',
 //          transparent: true,
     //      frame: false,
-        minWidth: 1050,
-        minHeight: 650,
+        minWidth: 1120,
+        minHeight: 680,
         width: 1280, 
         height: 720,
         icon: 'icone.ico',
@@ -26,7 +26,7 @@ function criaJanela() {
         slashes: true
     }));
 
-//    janela.webContents.openDevTools()
+    janela.webContents.openDevTools()
 
     janela.on('closed', function () {
         janela = null
