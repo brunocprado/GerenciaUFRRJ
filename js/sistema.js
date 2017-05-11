@@ -13,14 +13,16 @@ var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"),{
 	minChars: 3,
 	maxItems: 12,
     data: function (text, input) {
-		return {label: '<img src="img/avatar.png" >' + text, value: text} ;
+        var img = "";
+        if(text[1] == "U") img = "avatar";
+        if(text[1] == "A") img = "aluno";
+		return {label: "<img src='img/" + img + ".png'/>" + text[0], value: text[0]};
 	},
 });
 
 var data;
 
 var tabela;
-var posicoes = [];
 var mapaCalor;
 
 $("#frmLogin").submit(function(e){

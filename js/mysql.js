@@ -36,33 +36,47 @@ function getPosicoes(){
 }
 
 function getDadosInicio(){
-    conexao.query('SELECT COUNT(*) AS "QT" from teste', function(erro, linhas, campos) {
-        if (!erro){
-            $("#qtAlunos").html(linhas['0'].QT);
-        }
+    conexao.query('SELECT COUNT(*) AS "QT" from teste', function(erro, linhas, campos){
+        $("#qtAlunos").html(linhas['0'].QT);
     });
-    conexao.query('SELECT COUNT(*) AS "QT" from salas', function(erro, linhas, campos) {
-        if (!erro){
-            $("#qtSalas").html(linhas['0'].QT);
-        }
+    conexao.query('SELECT COUNT(*) AS "QT" from salas', function(erro, linhas, campos){
+        $("#qtSalas").html(linhas['0'].QT);
     });
-    conexao.query('SELECT COUNT(*) AS "QT" from usuarios', function(erro, linhas, campos) {
-        if (!erro){
-            $("#qtUsuarios").html(linhas['0'].QT);
-        }
+    conexao.query('SELECT COUNT(*) AS "QT" from usuarios', function(erro, linhas, campos){
+        $("#qtUsuarios").html(linhas['0'].QT);
     });
 }
 
 function pesquisa(busca){
-    conexao.query('SELECT nome from usuarios WHERE nome LIKE "%' + busca + '%"', function(erro, linhas, campos) {
+//    listaAutocomplete = [];
+    console.log(autocomplete.list);
+    
+    conexao.query('(SELECT nome,"A" FROM teste WHERE nome LIKE "%' + busca + '%") UNION (SELECT nome,"U" from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 10)', function(erro, linhas, campos) {
         if (!erro){
             var tmp = [];
             for(var i=0;i<linhas.length;i++){
-                tmp.push(linhas[i].nome);
+                tmp.push([linhas[i].nome,linhas[i].A]);
             }
             autocomplete.list = tmp;
         }
     });
+//    
+//    conexao.query('SELECT nome from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 12', function(erro, linhas, campos) {
+//        if (!erro){
+//            var a = autocomplete.list;
+//            for(var i=0;i<linhas.length;i++){
+//                a.push([linhas[i].nome,'u']);
+//            }
+//        }
+//    });
+//    console.log("ccc");
+//    conexao.query('SELECT nome from teste WHERE nome LIKE "%' + busca + '%" LIMIT 12', function(erro, linhas, campos) {
+//        if (!erro){
+//            for(var i=0;i<linhas.length;i++){
+//                autocomplete.list.push([linhas[i].nome,'a']);
+//            }
+//        }
+//    });
 }
 
 getDadosInicio();

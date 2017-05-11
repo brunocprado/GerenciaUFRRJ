@@ -6,7 +6,7 @@ label,span,li,img,h2,h3,input{
 /*Login*/
 
 #login{
-    display: none;
+/*    display: none;*/
     background-color: white;
     position:absolute;
     top:0; left: 0;
@@ -80,7 +80,7 @@ label,span,li,img,h2,h3,input{
     display: none !important;
 }
 #sidebar{
-    background-image: url(../img/b.png);
+    background-image: url(../img/sidebar.jpg);
     background-size: cover;
     position: absolute;
     top: 0; bottom: 0; left: 0;
@@ -390,8 +390,11 @@ table tr.odd {
 }
 
 .awesomplete li img{
-    margin-right: 20px;
+    margin: 0px 12px 0px 5px;
     float: left;
     height: 18px;
 }
 .awesomplete{ text-align: left !important; }
+mark{
+    background: #d89450 !important;
+}
