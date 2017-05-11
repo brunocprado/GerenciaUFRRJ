@@ -56,9 +56,11 @@ function getDadosInicio(){
 function pesquisa(busca){
     conexao.query('SELECT nome from usuarios WHERE nome LIKE "%' + busca + '%"', function(erro, linhas, campos) {
         if (!erro){
-            console.log(linhas);
-            var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"));
-            autocomplete.list = linhas['0'].nome;
+            var tmp = [];
+            for(var i=0;i<linhas.length;i++){
+                tmp.push(linhas[i].nome);
+            }
+            autocomplete.list = tmp;
         }
     });
 }
