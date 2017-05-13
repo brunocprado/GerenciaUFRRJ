@@ -16,6 +16,8 @@ var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"),{
         var img = "";
         if(text[1] == "U") img = "avatar";
         if(text[1] == "A") img = "aluno";
+        if(text[1] == "S") img = "sala";
+        if(text[1] == "M") img = "classe";
 		return {label: "<img src='img/" + img + ".png'/>" + text[0], value: text[0]};
 	},
 });
@@ -52,50 +54,56 @@ $('#calendario').fullCalendar({
 function criaGraficoInicio(){
     var manha = {
             label: 'Manhã',
-            data: [200, 280, 50,20,20,200, 280, 50,20,50,20],
+            data: [100, 210, 80,50,30,120, 310, 70,40,50,20],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)',
+                'rgba(255, 99, 132, 0.4)'
+            ]
         };
         
 var tarde = {
             label: 'Tarde',
-            data: [200, 280, 50,20,20,200, 280, 50,20,50,20],
+            data: [170, 220, 50,30,70,250, 280, 50,20,50,90],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(54, 162, 235, 0.4)'
+            ]
         };    
         
 var noite = {
             label: 'Noite',
             data: [200, 280, 50,20,20,200, 280, 50,20,50,20],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(255, 206, 86, 0.4)'
+            ]
         };    
 
 var myChart = new Chart("grafico", {

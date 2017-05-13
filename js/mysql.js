@@ -51,7 +51,12 @@ function pesquisa(busca){
 //    listaAutocomplete = [];
     console.log(autocomplete.list);
     
-    conexao.query('(SELECT nome,"A" FROM teste WHERE nome LIKE "%' + busca + '%") UNION (SELECT nome,"U" from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 10)', function(erro, linhas, campos) {
+    var consulta = '(SELECT nome,"A" FROM teste WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
+                 + ' UNION (SELECT nome,"U" from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
+                 + ' UNION (SELECT nome,"S" from salas WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
+                 + ' UNION (SELECT nome,"M" from materias WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
+    
+    conexao.query(consulta, function(erro, linhas, campos) {
         if (!erro){
             var tmp = [];
             for(var i=0;i<linhas.length;i++){
@@ -60,23 +65,6 @@ function pesquisa(busca){
             autocomplete.list = tmp;
         }
     });
-//    
-//    conexao.query('SELECT nome from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 12', function(erro, linhas, campos) {
-//        if (!erro){
-//            var a = autocomplete.list;
-//            for(var i=0;i<linhas.length;i++){
-//                a.push([linhas[i].nome,'u']);
-//            }
-//        }
-//    });
-//    console.log("ccc");
-//    conexao.query('SELECT nome from teste WHERE nome LIKE "%' + busca + '%" LIMIT 12', function(erro, linhas, campos) {
-//        if (!erro){
-//            for(var i=0;i<linhas.length;i++){
-//                autocomplete.list.push([linhas[i].nome,'a']);
-//            }
-//        }
-//    });
 }
 
 getDadosInicio();
