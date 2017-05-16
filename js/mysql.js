@@ -15,7 +15,6 @@ function fazLogin(login,senha){
     conexao.query('SELECT COUNT(*) AS "QT" from usuarios WHERE login="' + login + '" AND senha="' + senha + '"', function(erro, linhas, campos){
         if (!erro){
             if(linhas['0'].QT == 1){
-//                console.log("LOGADO");
                 $("#login").fadeOut(500);
             } else{
                 alert("Usúario ou senha incorretos");
@@ -41,6 +40,9 @@ function getDadosInicio(){
     });
     conexao.query('SELECT COUNT(*) AS "QT" from salas', function(erro, linhas, campos){
         $("#qtSalas").html(linhas['0'].QT);
+    });
+    conexao.query('SELECT COUNT(*) AS "QT" from materias', function(erro, linhas, campos){
+        $("#qtMaterias").html(linhas['0'].QT);
     });
     conexao.query('SELECT COUNT(*) AS "QT" from usuarios', function(erro, linhas, campos){
         $("#qtUsuarios").html(linhas['0'].QT);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 13, 2017 at 06:15 PM
+-- Generation Time: May 16, 2017 at 12:31 AM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.30
 
@@ -39,6 +39,27 @@ CREATE TABLE `materias` (
 
 INSERT INTO `materias` (`id`, `nome`, `sala`, `horario`) VALUES
 (1, 'Matemática Discreta', 26, '13:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `predios`
+--
+
+CREATE TABLE `predios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `lat` varchar(12) NOT NULL,
+  `lon` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `predios`
+--
+
+INSERT INTO `predios` (`id`, `nome`, `lat`, `lon`) VALUES
+(1, 'P1', '', ''),
+(2, 'IB', '', '');
 
 -- --------------------------------------------------------
 
@@ -1212,6 +1233,12 @@ ALTER TABLE `materias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `predios`
+--
+ALTER TABLE `predios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `salas`
 --
 ALTER TABLE `salas`
@@ -1240,6 +1267,11 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `materias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `predios`
+--
+ALTER TABLE `predios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `salas`
 --

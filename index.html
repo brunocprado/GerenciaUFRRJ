@@ -12,8 +12,6 @@
 <!--    <link rel="stylesheet" type="text/css" href="css/material.css">-->
 </head>
 <body>
-    <input type="file" id="arqTabela" accept=".csv">
-	<input type="file" id="arqMalha" accept=".shp,.json">
     
 	<div id="sidebar">
         <label class="titulo">SIG</label>
@@ -90,7 +88,7 @@
                 </div>
                 <div class="boxInicio">
                     <img src="img/classe.png">
-                    <label>0</label>
+                    <label id="qtMaterias">0</label>
                     <span>Matérias</span>
                 </div>
                 <div class="boxInicio">
@@ -153,7 +151,6 @@
         var jQuery = $;
     </script>
     
-	<script src="lib/jquery.csv.min.js"></script>
 	<script src="lib/awesomplete.min.js"></script>
 	<script src="lib/cluster.js"></script>
     <script src="lib/moment.min.js"></script>
