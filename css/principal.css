@@ -6,7 +6,7 @@ label,span,li,img,h2,h3,input{
 /*Login*/
 
 #login{
-    display: none;
+/*    display: none;*/
     background-color: white;
     position:absolute;
     top:0; left: 0;

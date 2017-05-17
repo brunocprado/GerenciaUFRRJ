@@ -50,9 +50,6 @@ function getDadosInicio(){
 }
 
 function pesquisa(busca){
-//    listaAutocomplete = [];
-    console.log(autocomplete.list);
-    
     var consulta = '(SELECT nome,"A" FROM teste WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
                  + ' UNION (SELECT nome,"U" from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
                  + ' UNION (SELECT nome,"S" from salas WHERE nome LIKE "%' + busca + '%" LIMIT 10)'

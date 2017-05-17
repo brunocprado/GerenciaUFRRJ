@@ -3,11 +3,11 @@ const remote = require('electron').remote;
 var chart = require('chart.js');
 
 //=====| Runtime |=====//
-//var mapa = new google.maps.Map(document.getElementById('mapaInicio'),{
-//    zoom: 16,
-//    mapTypeId: google.maps.MapTypeId.ROADMAP,
-//    center: new google.maps.LatLng(-22.7653619,-43.688468)
-//});
+var mapa = new google.maps.Map(document.getElementById('mapaInicio'),{
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    center: new google.maps.LatLng(-22.7653619,-43.688468)
+});
 
 var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"),{
 	minChars: 3,
@@ -20,6 +20,12 @@ var autocomplete = new Awesomplete(document.getElementById("txtPesquisar"),{
         if(text[1] == "M") img = "classe";
 		return {label: "<img src='img/" + img + ".png'/>" + text[0], value: text[0]};
 	},
+});
+
+Awesomplete.$.bind(document.getElementById("txtPesquisar"), {
+    "awesomplete-selectcomplete": function(evt) {
+        console.log(evt.text); 
+    }
 });
 
 var data;
