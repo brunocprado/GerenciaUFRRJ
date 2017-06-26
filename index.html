@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/awesomplete.css">
 <!--    <link rel="stylesheet" type="text/css" href="css/datatables.css">-->
     <link rel="stylesheet" type="text/css" href="lib/fullcalendar.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/ui/trumbowyg.css">
 <!--    <link rel="stylesheet" type="text/css" href="css/material.css">-->
 </head>
 <body>
@@ -115,12 +116,31 @@
                 <div><canvas id="grafico" ></canvas></div>
             </div>
             
+            <div class="box" style="margin-bottom: 30px; margin-right: 2%;">
+                <div class="tituloBox">
+                    <img src="img/calendario.png" height="18px">
+                    <label>Calendário</label>
+                </div>
+                <div id="calendario"></div>
+            </div>
+            
             <div class="box" style="margin-bottom: 30px;">
                 <div class="tituloBox">
                     <img src="img/plot.png" height="18px">
-                    <label>Calendário</label>
+                    <label>Novo evento</label>
                 </div>        
-                <div id="calendario"></div>
+                <div id="evento">
+                    <form>
+                        <input type="text" id="txtNomeEvento" placeholder="Titulo evento" required><br>
+                        <input type="text" id="eventoDtI" placeholder="Data inicial" required onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <input type="text" id="eventoDtF" placeholder="Data final" required onfocus="(this.type='date')" onblur="(this.type='text')">
+
+                        <textarea id="txtEventoConteudo"></textarea>
+                        
+                        <input type="submit" id="btnCriaEvento">
+                    </form>
+                    
+                </div>
             </div>
             
         </div>
@@ -154,6 +174,7 @@
 	<script src="lib/cluster.js"></script>
     <script src="lib/moment.min.js"></script>
     <script src="lib/fullcalendar.min.js"></script>
+    <script src="lib/trumbowyg.min.js"></script>
     
     <script src="js/mysql.js"></script>
 

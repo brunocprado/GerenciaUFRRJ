@@ -12,16 +12,17 @@
   "author": "Bruno Prado",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.5"
+    "electron": "^1.7.3"
   },
   "dependencies": {
-      "jquery": "^3.2.1",
-      "mysql" : "git+https://github.com/mysqljs/mysql.git"
+    "chart.js": "^2.6.0",
+    "jquery": "^3.2.1",
+    "mysql": "git+https://github.com/mysqljs/mysql.git"
   },
   "build": {
-      "appId": "GerenciaUFRRJ",
-      "mac": {
-         "category": "Gerencia"
-      }
+    "appId": "GerenciaUFRRJ",
+    "mac": {
+      "category": "Gerencia"
+    }
   }
 }

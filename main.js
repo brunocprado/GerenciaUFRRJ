@@ -26,7 +26,7 @@ function criaJanela() {
         slashes: true
     }));
 
-//    janela.webContents.openDevTools()
+//    janela.webContents.openDevTools();
 
     janela.on('closed', function () {
         janela = null

@@ -53,7 +53,7 @@ $('#calendario').fullCalendar({
 //        week: 'ddd' // Only show day of the week names
 //    },
     displayEventTime: true,
-    contentHeight: 340 
+    contentHeight: 380 
 });
 
 
@@ -191,3 +191,7 @@ $("#checkDensidade").change(function(e){
     if(mapaCalor != null) { mapaCalor.setMap(mapaCalor.getMap() ? null : mapa); }
 });
 //======================//
+
+
+$.trumbowyg.svgPath = './lib/ui/icons.svg';
+$('#txtEventoConteudo').trumbowyg();

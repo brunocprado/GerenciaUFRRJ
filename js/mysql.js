@@ -49,6 +49,12 @@ function getDadosInicio(){
     });
 }
 
+function getListaAlunos(){
+    conexao.query('SELECT * from teste', function(erro, linhas, campos){
+        console.log(linhas);
+    });
+}
+
 function pesquisa(busca){
     var consulta = '(SELECT nome,"A" FROM teste WHERE nome LIKE "%' + busca + '%" LIMIT 10)'
                  + ' UNION (SELECT nome,"U" from usuarios WHERE nome LIKE "%' + busca + '%" LIMIT 10)'

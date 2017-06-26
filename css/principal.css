@@ -6,7 +6,7 @@ label,span,li,img,h2,h3,input{
 /*Login*/
 
 #login{
-/*    display: none;*/
+    display: none;
     background-color: white;
     position:absolute;
     top:0; left: 0;
@@ -377,10 +377,37 @@ label input[type="checkbox"]:checked + .lever::after {
 
 #grafico{ padding: 0px 5px; height: 340px; width: content-box;}
 
-#calendario{ padding: 5px 10px; height: 400px;}
+#calendario{ padding: 5px 10px; height: 440px;}
 .fc-basic-view .fc-body .fc-row {
-    min-height: 10px !important;
+    min-height: 20px !important;
 }
+
+
+#evento{
+    height: 320px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+#evento input,#evento textarea{
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: solid 1px #aaa;
+    box-sizing: border-box;
+}
+#txtNomeEvento { width: 100%; }
+#eventoDtI,#eventoDtF{
+    width: calc(50% - 8px);
+}
+#eventoDtF{ margin-right: 0px !important; }
+#evento input{ padding: 0 10px; height: 32px; margin-right: 10px;}
+#evento textarea{ padding: 10px; resize: none; }
+#txtEventoConteudo{ width: 100%; display: block; } 
+.trumbowyg-box{ min-height: 120px !important; margin:0px 0 10px 0 !important;}
+.trumbowyg-editor, .trumbowyg-textarea { min-height: 0px !important; height: 210px !important; }
+#btnCriaEvento{ width: 50%; float: right; margin: 0 0 10px 0 !important;}
+
+
 /*Tabela*/
 #container table{
     min-width: 60% !important;
