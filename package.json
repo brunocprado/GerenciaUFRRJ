@@ -12,7 +12,7 @@
   "author": "Bruno Prado",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.7.3"
+    "electron": "^1.7.4"
   },
   "dependencies": {
     "chart.js": "^2.6.0",

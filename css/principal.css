@@ -6,7 +6,7 @@ label,span,li,img,h2,h3,input{
 /*Login*/
 
 #login{
-    display: none;
+/*    display: none;*/
     background-color: white;
     position:absolute;
     top:0; left: 0;
@@ -172,83 +172,6 @@ label,span,li,img,h2,h3,input{
     display:block;
 }
 
-
-/*
-||========================================||
-||              Menu Mapa                 ||
-||========================================||
-*/
-
-#menuMapa{
-    z-index:9;
-    position:absolute;
-    top: 10px; right: 10px;
-    background: rgba(255,255,255,.8);
-    border-radius: 5px;
-    padding:15px;
-    box-shadow: 0 0 5px #888;
-    width: 140px;
-    /*height: 200px; */
-}
-#menuMapa h3{
-    margin-top: 0;
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: center;
-    display:block;
-}
-#menuMapa label{
-    margin-bottom: 12px;
-    display:block;
-}
-#menuMapa .lever{
-    float:right;
-    margin-top: 3px;
-}
-
-label input[type="checkbox"] {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-label [type="checkbox"]:not(:checked), label [type="checkbox"]:checked {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-}
-label .lever {
-    content: "";
-    display: inline-block;
-    position: relative;
-    width: 40px;
-    height: 15px;
-    background-color: #818181;
-    border-radius: 15px;
-    margin-right: 10px;
-    transition: background 0.3s ease;
-    vertical-align: middle;
-    margin: 0 0 0 10px;
-}
-label .lever::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    width: 21px;
-    height: 21px;
-    background-color: #F1F1F1;
-    border-radius: 21px;
-    box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4);
-    left: -5px;
-    top: -3px;
-    transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
-}
-label input[type="checkbox"]:checked + .lever { background-color: #84c7c1; }
-label input[type="checkbox"]:checked + .lever::after {
-    background-color: #26a69a;
-    left: 24px;
-}
-
 /*
 ||========================================||
 ||                Inicio                  ||
@@ -261,6 +184,10 @@ label input[type="checkbox"]:checked + .lever::after {
     top:0px; bottom:0; left: 2%; right: 0;
     padding-left: 1px;
     overflow-y: auto; overflow-x: hidden !important;
+}
+#inicio[ativo=false]{
+    overflow-y: hidden !important;
+    border-top: solid 1px #aaa;
 }
 
 #containerInicio{
@@ -373,6 +300,7 @@ label input[type="checkbox"]:checked + .lever::after {
     right: 0px;
     height: auto !important;
     bottom: 0px;
+    z-index: 99999;
 }
 
 #grafico{ padding: 0px 5px; height: 340px; width: content-box;}
@@ -382,39 +310,44 @@ label input[type="checkbox"]:checked + .lever::after {
     min-height: 20px !important;
 }
 
-
 #evento{
     height: 320px;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
-
 #evento input,#evento textarea{
     margin-bottom: 12px;
     border-radius: 4px;
     border: solid 1px #aaa;
     box-sizing: border-box;
 }
-#txtNomeEvento { width: 100%; }
+#selTipoEvento { 
+    width: 100px; margin-right: 10px;
+    height: 32px; box-sizing:border-box;
+    border-radius: 5px;
+}
+#txtNomeEvento { width: calc(100% - 124px); }
 #eventoDtI,#eventoDtF{
-    width: calc(50% - 8px);
+    width: calc(50% - 7px);
 }
 #eventoDtF{ margin-right: 0px !important; }
 #evento input{ padding: 0 10px; height: 32px; margin-right: 10px;}
 #evento textarea{ padding: 10px; resize: none; }
 #txtEventoConteudo{ width: 100%; display: block; } 
-.trumbowyg-box{ min-height: 120px !important; margin:0px 0 10px 0 !important;}
-.trumbowyg-editor, .trumbowyg-textarea { min-height: 0px !important; height: 210px !important; }
+.trumbowyg-box{ min-height: 120px !important; margin:0px 0 10px 0 !important; border: solid 1px #aaa !important;}
+.trumbowyg-editor, .trumbowyg-textarea { min-height: 0px !important; height: 215px !important; }
 #btnCriaEvento{ width: 50%; float: right; margin: 0 0 10px 0 !important;}
 
 
 /*Tabela*/
-#container table{
-    min-width: 60% !important;
+#containerTabela{
+    display:none;
 }
-table tr.odd {
-    background-color: #f9f9f9 !important;
-}
+
+
+
+
+
 
 .awesomplete li img{
     margin: 0px 12px 0px 5px;

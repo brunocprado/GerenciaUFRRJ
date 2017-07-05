@@ -7,10 +7,9 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/principal.css">
     <link rel="stylesheet" type="text/css" href="css/awesomplete.css">
-<!--    <link rel="stylesheet" type="text/css" href="css/datatables.css">-->
     <link rel="stylesheet" type="text/css" href="lib/fullcalendar.min.css">
     <link rel="stylesheet" type="text/css" href="lib/ui/trumbowyg.css">
-<!--    <link rel="stylesheet" type="text/css" href="css/material.css">-->
+    <link rel="stylesheet" type="text/css" href="css/tabela.css">
 </head>
 <body>
     
@@ -30,10 +29,12 @@
             <img src="img/tabela.png">
             <label>Listas</label>
         </a>
+<!--
         <a class="menu" id="menuMalha">
             <img src="img/malha.png">
             <label>Malha</label>
         </a>
+-->
         <a class="menu selecionavel">
             <img src="img/sql.png">
             <label>SQL</label>
@@ -54,26 +55,6 @@
     </div>
     
     <div id="container"> 
-        
-        <div id="menuMapa" style="display:none;">
-            <h3>Mapa</h3>
-            <label>
-                Marcadores
-                <input id="checkMarcadores" type="checkbox" checked>
-                <span class="lever"></span>
-            </label>
-            <label>
-                Malha
-                <input id="checkMalha" type="checkbox">
-                <span class="lever"></span>
-            </label>
-            <label>
-                M. Calor
-                <input id="checkDensidade" type="checkbox">
-                <span class="lever"></span>
-            </label>
-        </div>
-        <div id="mapa"></div>
         
         <div id="inicio" ativo="true">            
             <div id="containerInicio">
@@ -126,27 +107,40 @@
             
             <div class="box" style="margin-bottom: 30px;">
                 <div class="tituloBox">
-                    <img src="img/plot.png" height="18px">
+                    <img src="img/calendario.png" height="18px">
                     <label>Novo evento</label>
                 </div>        
                 <div id="evento">
                     <form>
+                        <select id="selTipoEvento">
+                            <option>Evento</option>
+                            <option>Noticia</option>
+                        </select>
                         <input type="text" id="txtNomeEvento" placeholder="Titulo evento" required><br>
                         <input type="text" id="eventoDtI" placeholder="Data inicial" required onfocus="(this.type='date')" onblur="(this.type='text')">
                         <input type="text" id="eventoDtF" placeholder="Data final" required onfocus="(this.type='date')" onblur="(this.type='text')">
 
                         <textarea id="txtEventoConteudo"></textarea>
                         
-                        <input type="submit" id="btnCriaEvento">
+                        <input type="submit" id="btnCriaEvento" value="Cadastrar">
                     </form>
-                    
                 </div>
             </div>
             
         </div>
-        <div id="tabela">
-            <table id="containerTabela"></table>
-        </div>       
+        
+        <div id="containerTabela">
+            <div id="menu" class="caixa">
+                <label class="titulo">Filtrar</label>
+                <div> 
+                    
+                </div>
+            </div>
+            <table id="tabela">
+                
+            </table>
+        </div>    
+        
     </div>
 
     <div id="login">
@@ -162,22 +156,19 @@
         <img src="img/icone.png">
     </div>
     
-    
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpryBH-J1Xoc-7v1LpfafupW3xGfe1vNQ&libraries=visualization"></script>
-    
     <script>
         var $ = require('jQuery');
         var jQuery = $;
     </script>
-    
 	<script src="lib/awesomplete.min.js"></script>
 	<script src="lib/cluster.js"></script>
     <script src="lib/moment.min.js"></script>
     <script src="lib/fullcalendar.min.js"></script>
+    <script src="lib/pt-br.js"></script>
     <script src="lib/trumbowyg.min.js"></script>
     
     <script src="js/mysql.js"></script>
-
 	<script src="js/sistema.js"></script>
 	<script src="js/mapa.js"></script>
 	<script src="js/marcadores.js"></script>

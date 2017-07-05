@@ -29,7 +29,6 @@ Awesomplete.$.bind(document.getElementById("txtPesquisar"), {
 });
 
 var data;
-
 var tabela;
 var mapaCalor;
 
@@ -44,14 +43,11 @@ $("#txtPesquisar").keyup(function(e){
 });
 
 $('#calendario').fullCalendar({
-    weekends: false, // Hide weekends
-//    defaultView: 'agendaWeek', // Only show week view
-//    header: false, // Hide buttons/titles
-    minTime: '07:30:00', // Start time for the calendar
-    maxTime: '22:00:00', // End time for the calendar
-//    columnFormat: {
-//        week: 'ddd' // Only show day of the week names
-//    },
+    weekends: false, 
+    //header: false,
+    minTime: '07:30:00', 
+    maxTime: '22:00:00',
+    locale: "pt-br",
     displayEventTime: true,
     contentHeight: 380 
 });
@@ -170,28 +166,6 @@ $("#menuMalha").click(function(e){
 $("#btnFechar").click(function(e){
     remote.getCurrentWindow().close(); 
 });
-
-
-//=====| Menu Mapa |=====//
-$("#checkMarcadores").change(function(e){ 
-    if($(this).is(":checked")){
-        mudaMarcadores();
-    } else {
-        mudaMarcadores();
-    }    
-});
-$("#checkMalha").change(function(e){ 
-    if($(this).is(":checked")){
-        //mudaMarcadores(mapa);
-    } else {
-       // mudaMarcadores(null);
-    }    
-});
-$("#checkDensidade").change(function(e){ 
-    if(mapaCalor != null) { mapaCalor.setMap(mapaCalor.getMap() ? null : mapa); }
-});
-//======================//
-
 
 $.trumbowyg.svgPath = './lib/ui/icons.svg';
 $('#txtEventoConteudo').trumbowyg();

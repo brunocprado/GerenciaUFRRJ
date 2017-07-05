@@ -31,19 +31,13 @@ function adicionaMarcadores() { //TODO:só adicionar qnd for usar (1a vez)
             position: posicoes[marcadores.length]
 //            map: temp
         });	
-        var janela = new google.maps.InfoWindow({
-           content: "aaa"
-        });
-        marcador.addListener("click",function(){
-            janela.open(mapa,this); 
-        });
         marcadores.push(marcador);
     }
     if(temp != null) { clusterMarcadores.addMarkers(marcadores); }
     posicoes = null;
 }
 function mudaMarcadores(){
-    if($("#checkMarcadores").is(":checked")){
+//    if($("#checkMarcadores").is(":checked")){
          clusterMarcadores.addMarkers(marcadores);
-    } else { clusterMarcadores.clearMarkers(); }
+//    } else { clusterMarcadores.clearMarkers(); }
 }
